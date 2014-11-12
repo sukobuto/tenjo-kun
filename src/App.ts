@@ -1,6 +1,3 @@
-/**
- * Created by Kenta on 2014/11/06.
- */
 /// <reference path="../typings/tsd.d.ts"/>
 
 class App {
@@ -21,9 +18,15 @@ class App {
 	// function, we must explicitly call 'app.receivedEvent(...);'
 	public onDeviceReady = () => {
 		this.receivedEvent('deviceready');
-		$.get('templates.html').then(function(templates) {
-			$('.templates').html(templates);
-		});
+		(function($) {
+			$(document).ready(function() {
+				$('.deviceready').append('<p>started</p>');
+				$.get('templates.html').then(function(templates) {
+					$('.templates').html(templates);
+
+				});
+			});
+		})(jQuery);
 	};
 	// Update DOM on a Received Event
 	public receivedEvent(id) {
@@ -35,7 +38,6 @@ class App {
 		receivedElement.setAttribute('style', 'display:block;');
 	
 		console.log('Received Event: ' + id);
-		$('.deviceready').append('<p>started</p>');
 	}
 }
 
