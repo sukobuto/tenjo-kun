@@ -3,7 +3,6 @@
 
 interface KnockoutStatic {
 	punches :any;
-	track :any;
 }
 
 declare var KnockoutElse :{

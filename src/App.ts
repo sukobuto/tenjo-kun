@@ -21,6 +21,9 @@ class App {
 	// function, we must explicitly call 'app.receivedEvent(...);'
 	public onDeviceReady = () => {
 		this.receivedEvent('deviceready');
+		$.get('templates.html').then(function(templates) {
+			$('.templates').html(templates);
+		});
 	};
 	// Update DOM on a Received Event
 	public receivedEvent(id) {
@@ -32,6 +35,7 @@ class App {
 		receivedElement.setAttribute('style', 'display:block;');
 	
 		console.log('Received Event: ' + id);
+		$('.deviceready').append('<p>started</p>');
 	}
 }
 
