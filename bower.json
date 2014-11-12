@@ -1,0 +1,27 @@
+{
+  "name": "tenjo-kun",
+  "version": "0.0.1",
+  "authors": [
+    "Kenta Suzuki <sukobuto@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "~3.2.0",
+    "knockout-es5": "*",
+    "jquery": "~2.1.1",
+    "knockout-editables": "*",
+    "knockout.punches": "~0.5.0",
+    "fontawesome": "~4.2.0",
+    "bootstrap": "~3.3.0",
+    "require": "*"
+  }
+}
