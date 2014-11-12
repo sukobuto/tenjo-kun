@@ -18,15 +18,18 @@ class App {
 	// function, we must explicitly call 'app.receivedEvent(...);'
 	public onDeviceReady = () => {
 		this.receivedEvent('deviceready');
-		(function($) {
-			$(document).ready(function() {
-				$('.deviceready').append('<p>started</p>');
-				$.get('templates.html').then(function(templates) {
-					$('.templates').html(templates);
-
-				});
-			});
-		})(jQuery);
+		$(function() {
+			$('#deviceready').append('<p>started</p>');
+		});
+		//(function($) {
+		//	$(document).ready(function() {
+		//		$('.deviceready').append('<p>started</p>');
+		//		$.get('templates.html').then(function(templates) {
+		//			$('.templates').html(templates);
+		//
+		//		});
+		//	});
+		//})(jQuery);
 	};
 	// Update DOM on a Received Event
 	public receivedEvent(id) {
