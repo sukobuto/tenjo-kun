@@ -1,6 +1,17 @@
 /// <reference path="../typings/tsd.d.ts"/>
 
 class App {
+	public pages :{[name:string]:PageViewModel};
+	public page = 'home';
+	
+	constructor() {
+		var pages = this.pages = {
+			'home': new HomeViewModel()
+		};
+		ko.track(pages);
+		ko.track(this);
+	}
+	
 	// Application Constructor
 	public initialize() {
 		this.bindEvents();
@@ -18,28 +29,10 @@ class App {
 	// function, we must explicitly call 'app.receivedEvent(...);'
 	public onDeviceReady = () => {
 		this.receivedEvent('deviceready');
-		$(function() {
-			$('#deviceready').append('<p>started</p>');
-		});
-		//(function($) {
-		//	$(document).ready(function() {
-		//		$('.deviceready').append('<p>started</p>');
-		//		$.get('templates.html').then(function(templates) {
-		//			$('.templates').html(templates);
-		//
-		//		});
-		//	});
-		//})(jQuery);
+		ko.applyBindings(this);
 	};
 	// Update DOM on a Received Event
 	public receivedEvent(id) {
-		var parentElement = document.getElementById(id);
-		var listeningElement = parentElement.querySelector('.listening');
-		var receivedElement = parentElement.querySelector('.received');
-	
-		listeningElement.setAttribute('style', 'display:none;');
-		receivedElement.setAttribute('style', 'display:block;');
-	
 		console.log('Received Event: ' + id);
 	}
 }
