@@ -8,3 +8,5 @@ interface KnockoutStatic {
 declare var KnockoutElse :{
 	init :any;
 };
+
+declare var page : any;

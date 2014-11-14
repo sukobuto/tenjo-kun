@@ -1,12 +1,24 @@
+<script type="text/html" id="pages/edit/EditView.t.html">
+<div class="page-edit">
+	<div class="content">
+		<h1>編集画面</h1>
+	</div>
+	<div class="bar bar-standard bar-footer-secondary">
+		<button class="btn btn-block" data-bind="click: register">下車</button>
+	</div>
+	<div class="bar bar-standard bar-footer">
+		<a class="icon icon-back pull-left" href="#" data-bind="click: back"></a>
+		<a class="icon icon-gear pull-right" href="#"></a>
+	</div>
+</div>
+</script>
 <script type="text/html" id="pages/home/HomeView.t.html">
 <div class="page-home">
 	<div class="content">
-		<h1>Home</h1>
-		<p>Hello world</p>
-		<p>ここをリストにする</p>
+		<h1>ホーム画面</h1>
 	</div>
 	<div class="bar bar-standard bar-footer-secondary">
-		<button class="btn btn-block">乗車</button>
+		<button class="btn btn-block" data-bind="click: createNew">乗車</button>
 	</div>
 	<div class="bar bar-standard bar-footer">
 		<a class="icon icon-gear pull-right" href="#"></a>

@@ -16,9 +16,10 @@
 	<script src="lib/knockout-editables/ko.editables.js"></script>
 	<script src="lib/knockout.punches/knockout.punches.min.js"></script> 
 	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="lib/page/page.js"></script>
 </head>
 <body>
-<div class="app" data-bind="template: { name: pages[page].getTemplate(), data: pages[page] }"></div>
+<div class="app" data-bind="template: { name: page.getTemplate(), data: page }"></div>
 //= include templates.html
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/app.js"></script>

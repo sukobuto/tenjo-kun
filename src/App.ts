@@ -1,14 +1,9 @@
 /// <reference path="../typings/tsd.d.ts"/>
 
 class App {
-	public pages :{[name:string]:PageViewModel};
-	public page = 'home';
+	public page :PageViewModel = HomeViewModel.factory();
 	
 	constructor() {
-		var pages = this.pages = {
-			'home': new HomeViewModel()
-		};
-		ko.track(pages);
 		ko.track(this);
 	}
 	
@@ -30,10 +25,23 @@ class App {
 	public onDeviceReady = () => {
 		this.receivedEvent('deviceready');
 		ko.applyBindings(this);
+		this.declareRoutes();
 	};
 	// Update DOM on a Received Event
 	public receivedEvent(id) {
 		console.log('Received Event: ' + id);
+	}
+	
+	public initializeViewModel(context : any) : void {
+		console.log(context);
+		this.page.initialize(context);
+	}
+	
+	public declareRoutes() {
+		page('/', () => this.page = HomeViewModel.factory(), this.initializeViewModel);
+		page('/new', () => this.page = EditViewModel.factory(), this.initializeViewModel);
+		page('/edit/:id', () => this.page = EditViewModel.factory(), this.initializeViewModel);
+		page();
 	}
 }
 
