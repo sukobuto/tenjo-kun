@@ -6,6 +6,7 @@ Cordova4 + TypeScript + KnockoutJS + Ratchet でビジネス系アプリ開発�
 ### 現状
 
 Hello World として、まず ko.applyBindings が効いたことを確認。
+[Phalcon PHP Framework の DI 実装](http://docs.phalconphp.com/ja/latest/reference/di.html) がとても軽快ですばらしいので、それにインスパイアされた形で DI コンテナを実装し動作を確認。
 
 ### 部品やページごとに分割して書いた View をいかにして読み込むか
 
