@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var typescript = require('gulp-typescript');
+var typescript = require('gulp-tsc');
 var concat = require('gulp-concat');
 var concat_sm = require('gulp-concat-sourcemap');
 var sourcemaps = require('gulp-sourcemaps');
@@ -11,16 +11,13 @@ var include = require('gulp-include');
 //TypeScriptのタスク
 gulp.task('typescript',function(){
 	gulp.src([
-		'src/**/!(App)*.ts',
 		'src/App.ts'
 	])
-		.pipe(plumber()) //エラーしてもウォッチを途中でやめないための処理
-		.pipe(sourcemaps.init())
+		//.pipe(plumber()) //エラーしてもウォッチを途中でやめないための処理
 		.pipe(typescript({
-			sortOutput: true
+			out: 'app.js',
+			target: 'ES5'
 		}))
-		.pipe(concat_sm('app.js'))
-		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('www/js'));
 });
 

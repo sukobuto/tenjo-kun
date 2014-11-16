@@ -24,6 +24,8 @@
     "bootstrap": "~3.3.0",
     "ratchet": "~2.0.2",
     "page": "~1.4.0",
-    "weather-icons": "~1.2.1"
+    "weather-icons": "~1.2.1",
+    "moment": "~2.8.3",
+    "knockout-jqAutocomplete": "~0.2.1"
   }
 }

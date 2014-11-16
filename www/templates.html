@@ -15,7 +15,17 @@
 <script type="text/html" id="pages/home/HomeView.t.html">
 <div class="page-home">
 	<div class="content">
-		<h1>ホーム画面</h1>
+		<h1 data-bind="text: testProperty"></h1>
+		<ul class="table-view" data-bind="foreach: accompanies">
+			<li class="table-view-cell media">
+				<a class="navigate-right" href="#" data-bind="click: edit">
+					日付 乗車-下車
+					<div class="media-body">
+						
+					</div>
+				</a>
+			</li>
+		</ul>
 	</div>
 	<div class="bar bar-standard bar-footer-secondary">
 		<button class="btn btn-block" data-bind="click: createNew">乗車</button>

@@ -1,41 +1,35 @@
-/// <reference path="../references.d.ts" />
+/// <reference path="../di/DependencyInjectable.ts" />
 
-class PageViewModel implements IPageViewModel {
+module tj {
 
-	public getName() : string {
-		throw new Error('getName method is not implemented.');
+	export class PageViewModel extends DependencyInjectable {
+
+		/**
+		 * ページ名を取得するメソッド
+		 */
+		public getName() : string {
+			throw new Error('getName method is not implemented.');
+		}
+
+		/**
+		 * ページごとのテンプレートIDを取得するメソッド
+		 */
+		public getTemplate() : string {
+			throw new Error('getTemplate method is not implemented.');
+		}
+
+		/**
+		 * 遷移後に呼び出されるイベントメソッド
+		 * @param context
+		 */
+		public initialize(context : any) : void {
+
+		}
+
+		public static factory() : PageViewModel {
+			throw new Error('factory method is not implemented.');
+		}
+
 	}
-
-	public getTemplate() : string {
-		throw new Error('getTemplate method is not implemented.');
-	}
-
-	public initialize(context : any) : void {
-
-	}
-
-	public static factory() : PageViewModel {
-		throw new Error('factory method is not implemented.');
-	}
-	
-}
-
-interface IPageViewModel {
-
-	/**
-	 * ページ名を取得するメソッド
-	 */
-	getName() : string
-
-	/**
-	 * ページごとのテンプレートIDを取得するメソッド
-	 */
-	getTemplate() : string
-
-	/**
-	 * 遷移後に呼び出されるイベントメソッド
-	 * @param context
-	 */
-	initialize(context : any) : void
 	
 }
